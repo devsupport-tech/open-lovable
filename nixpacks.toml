@@ -1,7 +1,11 @@
 providers = ["node"]
 
 [phases.setup]
-cmds = ["npm install -g corepack", "corepack disable"]
+cmds = [
+  "apt-get update && apt-get install -y --no-install-recommends ca-certificates",
+  "npm install -g corepack",
+  "corepack disable"
+]
 
 [phases.install]
 cmds = ["npm ci"]

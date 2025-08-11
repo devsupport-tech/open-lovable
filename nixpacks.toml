@@ -9,10 +9,8 @@ cmds = [
 ]
 
 [phases.install]
-# Run install scripts so Lightning CSS grabs the right binary
 cmds = [
   "npm ci --foreground-scripts",
-  # If the native binary didn't land, try a rebuild but don't fail the build
   "npm rebuild lightningcss || true"
 ]
 

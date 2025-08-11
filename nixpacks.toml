@@ -2,13 +2,17 @@ providers = ["node"]
 
 [phases.setup]
 cmds = [
+  "node -v",
+  "npm -v",
   "npm install -g corepack",
   "corepack disable"
 ]
 
 [phases.install]
+# Run install scripts so Lightning CSS grabs the right binary
 cmds = [
   "npm ci --foreground-scripts",
+  # If the native binary didn't land, try a rebuild but don't fail the build
   "npm rebuild lightningcss || true"
 ]
 

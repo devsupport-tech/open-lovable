@@ -2,13 +2,15 @@ providers = ["node"]
 
 [phases.setup]
 cmds = [
-  "apt-get update && apt-get install -y --no-install-recommends ca-certificates",
   "npm install -g corepack",
   "corepack disable"
 ]
 
 [phases.install]
-cmds = ["npm ci"]
+cmds = [
+  "npm ci --foreground-scripts",
+  "npm rebuild lightningcss || true"
+]
 
 [phases.build]
 cmds = ["npm run build"]

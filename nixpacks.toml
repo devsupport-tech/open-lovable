@@ -1,11 +1,5 @@
-providers = ["node"]
-
 [phases.setup]
-nixPkgs = ["python3", "gcc", "gnumake"]
-cmds = [
-  "node -v",
-  "npm -v"
-]
+nixPkgs = ["nodejs_20", "python3", "gcc", "gnumake"]
 
 [phases.install]
 cmds = [

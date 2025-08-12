@@ -13,8 +13,9 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
+# Install dependencies and rebuild native modules
 RUN npm ci || npm install
+RUN npm rebuild
 
 # Copy application code
 COPY . .

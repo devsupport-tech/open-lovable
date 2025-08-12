@@ -1,0 +1,25 @@
+{
+  "memories": [
+    {
+      "id": "mem_1755011232044_503ztgcg9",
+      "content": "Open Lovable project analysis:\n- Next.js 15 React app with TypeScript\n- AI-powered sandbox builder using E2B, creates React apps in sandboxes\n- Uses AI providers: OpenAI (GPT-5), Anthropic (Sonnet), Groq (Kimi K2)\n- Main dependencies: E2B for sandboxes, Firecrawl for scraping, AI SDK\n- Key commands: npm run dev (--turbopack), npm run build, npm run lint\n- Test commands exist but no test files implemented yet\n- Config in config/app.config.ts controls E2B timeouts, AI models, Vite settings\n- Global state management for sandboxes, conversation context, file caches\n- Complex streaming architecture for AI code generation and application",
+      "type": "config",
+      "tags": [
+        "config",
+        "typescript",
+        "react",
+        "open-lovable",
+        "project-structure",
+        "nextjs",
+        "e2b",
+        "ai-sandbox"
+      ],
+      "timestamp": "2025-08-12T15:07:12.044Z",
+      "accessCount": 0,
+      "lastAccessed": "2025-08-12T15:07:12.044Z",
+      "lastVerified": "2025-08-12T15:07:12.044Z",
+      "status": "fresh"
+    }
+  ],
+  "lastUpdated": "2025-08-12T15:07:12.044Z"
+}

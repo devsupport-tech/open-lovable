@@ -34,14 +34,22 @@ export const appConfig = {
     availableModels: [
       'openai/gpt-5',
       'moonshotai/kimi-k2-instruct',
-      'anthropic/claude-sonnet-4-20250514'
+      'anthropic/claude-sonnet-4-20250514',
+      'anthropic/claude-3-5-sonnet-20241022',
+      'anthropic/claude-3-5-haiku-20241022',
+      'anthropic/claude-3-opus-20240229',
+      'anthropic/claude-opus-4-1-20250805'
     ],
     
     // Model display names
     modelDisplayNames: {
       'openai/gpt-5': 'GPT-5',
       'moonshotai/kimi-k2-instruct': 'Kimi K2 Instruct',
-      'anthropic/claude-sonnet-4-20250514': 'Sonnet 4'
+      'anthropic/claude-sonnet-4-20250514': 'Sonnet 4',
+      'anthropic/claude-3-5-sonnet-20241022': 'Claude 3.5 Sonnet',
+      'anthropic/claude-3-5-haiku-20241022': 'Claude 3.5 Haiku',
+      'anthropic/claude-3-opus-20240229': 'Claude 3 Opus',
+      'anthropic/claude-opus-4-1-20250805': 'Claude Opus 4.1'
     },
     
     // Temperature settings for non-reasoning models

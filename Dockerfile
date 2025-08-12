@@ -1,19 +1,20 @@
 # Build stage
-FROM node:20-alpine AS builder
+FROM node:20-slim AS builder
 
 # Install build dependencies
-RUN apk add --no-cache python3 make g++ gcc libc-dev
+RUN apt-get update && apt-get install -y \
+    python3 \
+    make \
+    g++ \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies with proper platform
-RUN npm ci --platform=linux --arch=x64 || npm install
-
-# Rebuild native modules for Alpine Linux
-RUN npm rebuild
+# Install dependencies
+RUN npm ci || npm install
 
 # Copy application code
 COPY . .
@@ -22,7 +23,7 @@ COPY . .
 RUN npm run build
 
 # Production stage
-FROM node:20-alpine
+FROM node:20-slim
 
 WORKDIR /app
 

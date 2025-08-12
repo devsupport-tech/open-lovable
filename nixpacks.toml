@@ -1,10 +1,11 @@
 [phases.setup]
-nixPkgs = ["nodejs_20", "python3", "gcc", "gnumake"]
+nixPkgs = ["nodejs_20", "python3", "gcc", "gnumake", "libc.dev"]
 
 [phases.install]
 cmds = [
-  "npm install --platform=linux --arch=x64",
-  "npm rebuild lightningcss --update-binary",
+  "npm ci --platform=linux --arch=x64 --libc=glibc",
+  "npm uninstall lightningcss",
+  "npm install lightningcss --platform=linux --arch=x64 --libc=glibc",
   "npm rebuild"
 ]
 

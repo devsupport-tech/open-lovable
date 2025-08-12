@@ -1,17 +1,17 @@
 providers = ["node"]
 
 [phases.setup]
+nixPkgs = ["python3", "gcc", "gnumake"]
 cmds = [
   "node -v",
-  "npm -v",
-  "npm install -g corepack",
-  "corepack disable"
+  "npm -v"
 ]
 
 [phases.install]
 cmds = [
-  "npm ci --foreground-scripts",
-  "npm rebuild lightningcss || true"
+  "npm install --platform=linux --arch=x64",
+  "npm rebuild lightningcss --update-binary",
+  "npm rebuild"
 ]
 
 [phases.build]
